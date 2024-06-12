@@ -46,7 +46,7 @@ function hitungtotaldata(a) {
 function halamanblogger() {
     var a = urlactivepage; - 1 != a.indexOf("/search/label/") && (lblname1 = -1 != a.indexOf("?updated-max") ? a
         .substring(a.indexOf("/search/label/") + 14, a.indexOf("?updated-max")) : a.substring(a.indexOf(
-            "/search/label/") + 14, a.indexOf("&max"))), -1 == a.indexOf("?q=") && -1 == a.indexOf(".html") && (-
+            "/search/label/") + 14, a.indexOf("?&max"))), -1 == a.indexOf("?q=") && -1 == a.indexOf(".html") && (-
         1 == a.indexOf("/search/label/") ? (jenis = "page", nomerhal = -1 != urlactivepage.indexOf("#PageNo=") ?
             urlactivepage.substring(urlactivepage.indexOf("#PageNo=") + 8, urlactivepage.length) : 1, document
             .write('<script src="' + home_page +
