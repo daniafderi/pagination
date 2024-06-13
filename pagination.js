@@ -44,17 +44,18 @@ function hitungtotaldata(a) {
 }
 
 function halamanblogger() {
-    var a = urlactivepage; - 1 != a.indexOf("/search/label/") && (lblname1 = -1 != a.indexOf("?updated-max") ? a
-        .substring(a.indexOf("/search/label/") + 14, a.indexOf("?updated-max")) : a.substring(a.indexOf(
-            "/search/label/") + 14, a.indexOf("?&max"))), -1 == a.indexOf("?q=") && -1 == a.indexOf(".html") && (-
-        1 == a.indexOf("/search/label/") ? (jenis = "page", nomerhal = -1 != urlactivepage.indexOf("#PageNo=") ?
+    var e = urlactivepage; - 1 != e.indexOf("/search/label/") && (lblname1 = -1 == e.indexOf("q=") ? "/-/" + (-1 != e.indexOf(
+            "?updated-max") ? e.substring(e.indexOf("/search/label/") + 14, e.indexOf("?updated-max")) : e
+        .substring(e.indexOf("/search/label/") + 14, e.indexOf("?&max"))).replace("+", "/") : e.substring(e
+        .indexOf("q=") + 2, e.indexOf("&max"))), -1 == e.indexOf("?q=") && -1 == e.indexOf(".html") && (-1 == e
+        .indexOf("/search/label/") ? (jenis = "page", nomerhal = -1 != urlactivepage.indexOf("#PageNo=") ?
             urlactivepage.substring(urlactivepage.indexOf("#PageNo=") + 8, urlactivepage.length) : 1, document
             .write('<script src="' + home_page +
-                'feeds/posts/summary?max-results=1&alt=json-in-script&callback=hitungtotaldata"></script>')) : (
-            jenis = "label", -1 == a.indexOf("&max-results=") && (postperpage = 20), nomerhal = -1 != urlactivepage
+                'feeds/posts/summary?max-results=1&alt=json-in-script&callback=hitungtotaldata"><\/script>')) : (
+            jenis = "label", -1 == e.indexOf("&max-results=") && (postperpage = 20), nomerhal = -1 != urlactivepage
             .indexOf("#PageNo=") ? urlactivepage.substring(urlactivepage.indexOf("#PageNo=") + 8, urlactivepage
-                .length) : 1, document.write('<script src="' + home_page + "feeds/posts/summary/-/" + (lblname1.includes("+") ? lblname1.replace("+","/") : lblname1) +
-                '?alt=json-in-script&callback=hitungtotaldata&max-results=1" ></script>')))
+                .length) : 1, document.write('<script src="' + home_page + "feeds/posts/summary" + lblname1 +
+                '?alt=json-in-script&callback=hitungtotaldata&max-results=1" ><\/script>')))
 }
 
 function redirectpage(a) {
