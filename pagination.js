@@ -53,7 +53,7 @@ function halamanblogger() {
                 'feeds/posts/summary?max-results=1&alt=json-in-script&callback=hitungtotaldata"></script>')) : (
             jenis = "label", -1 == a.indexOf("&max-results=") && (postperpage = 20), nomerhal = -1 != urlactivepage
             .indexOf("#PageNo=") ? urlactivepage.substring(urlactivepage.indexOf("#PageNo=") + 8, urlactivepage
-                .length) : 1, document.write('<script src="' + home_page + "feeds/posts/summary/-/" + lblname1 +
+                .length) : 1, document.write('<script src="' + home_page + "feeds/posts/summary/-/" + (lblname1.includes("+") ? lblname1.replace("+","/") : lblname1) +
                 '?alt=json-in-script&callback=hitungtotaldata&max-results=1" ></script>')))
 }
 
